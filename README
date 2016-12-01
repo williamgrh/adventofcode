@@ -1,0 +1,19 @@
+# adventofcode
+Solving http://adventofcode.com puzzles using Node v7.2.
+
+To run one day/part
+------
+`npm start <year#> <day#> <part#>`
+
+Example
+-------
+```
+npm start 2016 1 1
+1.1 running...
+1.1 answer:	   543903
+1.1 time:	   00:09:7400
+```
+
+To test all days in a year
+-----------
+`npm run 2016-test`

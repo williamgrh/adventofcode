@@ -1,6 +1,4 @@
 module.exports = (input) => {
-
-  input = 'R5, L5, R5, R3';
   // parse the input data
   var data = input.split(', ').map((s) => {
     // convert R and L turns to positive and negative

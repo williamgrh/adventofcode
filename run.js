@@ -2,6 +2,9 @@ const moment = require('moment');
 const fs = require('fs');
 
 module.exports = function run(year, day, part) {
+  if (day.toString().length < 2) {
+    day = '0' + day.toString();
+  }
   let input = fs.readFileSync(`./${year}/${day}/input.txt`, 'utf-8').trimRight().split('\n');
   let startTime = moment();
 

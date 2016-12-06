@@ -1,25 +1,21 @@
-const assert = require('assert');
+module.exports = (test) => {
+  describe('2016', () => {
+    it('day 01, part 1', () => test(16, 1, 1, 146));
+    it('day 01, part 2', () => test(16, 1, 2, 131));
 
-describe('advent of code', () => {
-  const run = require('../run');
+    it('day 02, part 1', () => test(16, 2, 1, '78985'));
+    it('day 02, part 2', () => test(16, 2, 2, '57DD8'));
 
-  function test(day, part, expected) {
-    const actual = run(2016, day, part);
-    return assert.equal(expected, actual);
-  }
+    it('day 03, part 1', () => test(16, 3, 1, 862));
+    it('day 03, part 2', () => test(16, 3, 2, 1577));
 
-  it('day 1, part 1', () => test(1, 1, 146));
-  it('day 1, part 2', () => test(1, 2, 131));
+    it('day 04, part 1', () => test(16, 4, 1, 185371));
+    it('day 04, part 1', () => test(16, 4, 2, 984));
 
-  it('day 2, part 1', () => test(2, 1, '78985'));
-  it('day 2, part 2', () => test(2, 2, '57DD8'));
+    it('day 05, part 1', () => test(16, 5, 1, '801b56a7'));
+    it('day 05, part 1', () => test(16, 5, 2, '424a0197'));
 
-  it('day 3, part 1', () => test(3, 1, 862));
-  it('day 3, part 2', () => test(3, 2, 1577));
-
-  it('day 4, part 1', () => test(4, 1, 185371));
-  it('day 4, part 1', () => test(4, 2, 984));
-
-  it('day 5, part 1', () => test(5, 1, '801b56a7'));
-  it('day 5, part 1', () => test(5, 2, '424a0197'));
-})
+    it('day 06, part 1', () => test(16, 6, 1, 'mshjnduc'));
+    it('day 06, part 1', () => test(16, 6, 2, 'apfeeebz'));
+  });
+};

@@ -34,7 +34,7 @@ module.exports = (input) => {
         }
       }
       return 0;
-    }).reverse().slice(0, 5).join().replace(/,/g, '');
+    }).reverse().slice(0, 5).join('');
 
     if (check === room[1]) {
       rooms.push(room);

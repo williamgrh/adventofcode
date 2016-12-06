@@ -9,8 +9,9 @@
   "author": "Andy Christianson",
   "license": "ISC",
   "scripts": {
-    "start": "node index",
-    "test-2016": "mocha 2016/test.js --timeout 30000"
+    "setup": "node setup.js",
+    "start": "node index.js",
+    "test": "mocha test.js --timeout 30000"
   },
   "engines": {
     "node": ">=7.0.0"

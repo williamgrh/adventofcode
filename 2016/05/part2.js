@@ -13,5 +13,5 @@ module.exports = (input) => {
     }
     index++;
   }
-  return password.join().replace(/,/g, '');
+  return password.join('');
 };

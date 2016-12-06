@@ -1,4 +1,4 @@
-# adventofcode
+# Advent of Code
 Solving http://adventofcode.com puzzles using Node v7.2.
 
 To run a solution

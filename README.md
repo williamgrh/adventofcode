@@ -13,4 +13,4 @@ To set up a new solution
 ------
 `npm run setup <year#> <day#>`
 
-Credit for the project structure goes to [NiXXeD](https://github.com/NiXXeD/) here on GitHub.
+Credit for the project structure goes to [NiXXeD](https://github.com/NiXXeD/adventofcode) here on GitHub.

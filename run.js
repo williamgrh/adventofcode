@@ -3,6 +3,7 @@ const fs = require('fs');
 
 function run(year, day, part) {
   let log = process.env.NODE_ENV !== 'test';
+  part = part.toString().slice(-1);
   day = day.toString().length === 1 ? '0'.concat(day): day;
   year = year.toString().length === 2 ? '20'.concat(year) : year;
 

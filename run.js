@@ -27,5 +27,7 @@ module.exports = (year, day, part) => {
     run(year, day, 1);
     console.log();
     run(year, day, 2);
-  } else run(year, day, part);
+  } else {
+    return run(year, day, part);
+  }
 };

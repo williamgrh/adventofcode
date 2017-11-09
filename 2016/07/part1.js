@@ -1,5 +1,4 @@
 module.exports = (input) => {
-  console.log(input[34]);
 	input = input.map(s => s.trim().split(/\[|\]/));
   var count = 0;
   for (let i = 0; i < input.length; i++) {

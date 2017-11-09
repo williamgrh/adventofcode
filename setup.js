@@ -6,7 +6,7 @@ year = year.length === 2 ? '20'.concat(year) : year;
 day = day.length === 1 ? '0'.concat(day) : day;
 
 let dir = `./${year}/${day}`;
-let func = 'module.exports = (input) => {\n\treturn input;\n};';
+let func = 'module.exports = (input) => {\n  return input;\n};';
 
 if (!fs.existsSync(dir)) {
   // dir, input, and code

@@ -1,5 +1,5 @@
 # Advent of Code
-Solving http://adventofcode.com puzzles using Node v7.2.
+Solving http://adventofcode.com puzzles using JavaScript.
 
 To run a solution
 ------

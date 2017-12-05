@@ -14,7 +14,7 @@ describe('Advent of Code', () => {
     year = year.length === 2 ? '20'.concat(year) : year;
     require(`./${year}/test`)(test);
   } else {
-    for (let year = 2015; year <= 2016; year++) {
+    for (let year = 2015; year <= 2017; year++) {
       require(`./${year}/test`)(test);
     }
   }

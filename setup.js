@@ -1,7 +1,12 @@
 const fs = require('fs');
 
-let year = process.argv[2];
-let day = process.argv[3];
+let today = new Date();
+let year = today.getFullYear().toString();
+let day = today.getDate().toString();
+if (process.argv.length >= 3) {
+  year = process.argv[2];
+  day = process.argv[3];
+}
 year = year.length === 2 ? '20'.concat(year) : year;
 day = day.length === 1 ? '0'.concat(day) : day;
 

@@ -14,8 +14,9 @@ module.exports = (input) => {
   }
 
   input.map(length => {
+    if (length > l) return;
     circularReverseInPlace(c, length);
-    c += s; s++;
+    c = (c + length + s) % l; s++;
   });
 
   return list[0] * list[1];

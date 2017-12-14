@@ -19,7 +19,7 @@ module.exports = (test) => {
     it('day 06, part 2', () => test(17, 06, 2, 1037));
 
     it('day 07, part 1', () => test(17, 07, 1, 'wiapj'));
-    it('day 07, part 2', () => test(17, 07, 2, 0));
+    it('day 07, part 2', () => test(17, 07, 2, 1072));
 
     it('day 08, part 1', () => test(17, 08, 1, 5143));
     it('day 08, part 2', () => test(17, 08, 2, 6209));
@@ -38,5 +38,8 @@ module.exports = (test) => {
 
     it('day 13, part 1', () => test(17, 13, 1, 1528));
     it('day 13, part 2', () => test(17, 13, 2, 3896406));
+
+    it('day 14, part 1', () => test(17, 14, 1, 0));
+    it('day 14, part 2', () => test(17, 14, 2, 0));
   });
 };

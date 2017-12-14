@@ -17,16 +17,24 @@ module.exports = (input) => {
     node = parent.name;
     parent = _.find(nodes, (n) => _.includes(n.children, node));
   }
-  parent = node;
 
   const getWeight = (node) => node.weight + node.children.reduce((sum, node) => sum + getWeight(nodes[node]), 0);
-
-  let weights = nodes[parent].children.reduce((dict, n) => {
-    let w = getWeight(nodes[n]);
-    if (dict[w]) dict[w] += 1;
-    else dict[w] = 1;
-    return dict;
-  }, {});
-
-  return weights;
+  const findUnbalancedChildAndDiff = (node) => {
+    const weights = node.children.map(n => getWeight(nodes[n]));
+    const dict = _.invert(_.countBy(weights));
+    if (!dict['1']) return {child: -1, diff: 0};
+    const diff = parseInt(Object.values(_.pickBy(dict, (v, k) => k !== '1'))[0], 10) - parseInt(dict['1'], 10);
+    return {child: weights.indexOf(parseInt(dict['1'], 10)), diff};
+  };
+  
+  let prevChildAndDiff = {};
+  while (true) {
+    let {child, diff} = findUnbalancedChildAndDiff(nodes[node]);
+    if (child !== -1 && nodes[nodes[node].children[child]].children.length > 0) {
+      prevChildAndDiff = {child, diff};
+      node = nodes[node].children[child];
+    } else {
+      return nodes[node].weight + prevChildAndDiff.diff;
+    }
+  }
 };

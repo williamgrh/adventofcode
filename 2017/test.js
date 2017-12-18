@@ -42,7 +42,10 @@ module.exports = (test) => {
     it('day 14, part 1', () => test(17, 14, 1, 8216));
     it('day 14, part 2', () => test(17, 14, 2, 1139));
 
-    it('day 15, part 1', () => test(17, 15, 1, 0));
-    it('day 15, part 2', () => test(17, 15, 2, 0));
+    it('day 15, part 1', () => test(17, 15, 1, 619));
+    it('day 15, part 2', () => test(17, 15, 2, 290));
+
+    it('day 16, part 1', () => test(17, 16, 1, 'dcmlhejnifpokgba'));
+    it('day 16, part 2', () => test(17, 16, 2, 'ifocbejpdnklamhg'));
   });
 };

@@ -56,5 +56,11 @@ module.exports = (test) => {
 
     it('day 19, part 1', () => test(17, 19, 1, 'YOHREPXWN'));
     it('day 19, part 2', () => test(17, 19, 2, 16734));
+
+    it('day 20, part 1', () => test(17, 20, 1, 170));
+    it('day 20, part 2', () => test(17, 20, 2, 571));
+
+    it('day 21, part 1', () => test(17, 21, 1, 0));
+    it('day 21, part 2', () => test(17, 21, 2, 0));
   });
 };

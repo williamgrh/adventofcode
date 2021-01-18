@@ -8,7 +8,7 @@ Solving http://adventofcode.com puzzles using JavaScript.
 
 ## To test solutions
 
-`npm test [<year#>]`
+`npm test [-- --year=<year#>]`
 
 ## To set up a new solution
 

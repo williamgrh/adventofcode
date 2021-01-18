@@ -10,7 +10,7 @@ describe("Advent of Code", () => {
   }
 
   if (process.argv.length === 6) {
-    let year = process.argv[5].toString();
+    let year = process.argv[5].toString().slice(7);
     year = year.length === 2 ? "20".concat(year) : year;
     require(`./${year}/test`)(test);
   } else {

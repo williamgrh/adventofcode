@@ -1,9 +1,9 @@
 module.exports = (input) => {
   let map = {};
   let i = 0;
-  input.forEach(floor => {
+  input.forEach((floor) => {
     map[i] = {};
-    floor = floor.replace(/[\.\,]/g, '').split(' ');
+    floor = floor.replace(/[\.\,]/g, "").split(" ");
 
     // get entities and load them into the map
     for (let j = 0; j < floor.length; j++) {
@@ -19,8 +19,8 @@ module.exports = (input) => {
   });
 
   // add custom entities for part 2
-  map[0]['e'] = { g: true, m: true };
-  map[0]['d'] = { g: true, m: true };
+  map[0]["e"] = { g: true, m: true };
+  map[0]["d"] = { g: true, m: true };
 
   let steps = 0;
   for (let i = 0; i < input.length - 1; i++) {
@@ -31,8 +31,8 @@ module.exports = (input) => {
     }
 
     // move all pairs up a floor
-    steps += (4 * (pairs.length - 1)) + 1;
-    pairs.forEach(entityType => {
+    steps += 4 * (pairs.length - 1) + 1;
+    pairs.forEach((entityType) => {
       map[i + 1][entityType] = map[i][entityType];
       delete map[i][entityType];
     });

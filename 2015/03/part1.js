@@ -4,16 +4,16 @@ module.exports = (input) => {
   visited.add(`${loc[0]},${loc[1]}`);
   for (let i = 0; i < input.length; i++) {
     switch (input[i]) {
-      case '>':
+      case ">":
         loc[0]++;
         break;
-      case '<':
+      case "<":
         loc[0]--;
         break;
-      case '^':
+      case "^":
         loc[1]++;
         break;
-      case 'v':
+      case "v":
         loc[1]--;
         break;
       default:

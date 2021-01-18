@@ -1,6 +1,11 @@
 module.exports = (input) => {
   // parse input data
-  var data = input.map(s => s.trim().split(/ +/).map(n => parseInt(n)));
+  var data = input.map((s) =>
+    s
+      .trim()
+      .split(/ +/)
+      .map((n) => parseInt(n))
+  );
 
   var possibleCount = 0;
   // loop through to check all triangles

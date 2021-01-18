@@ -1,10 +1,11 @@
-const _ = require('lodash');
+const _ = require("lodash");
 module.exports = (input) => {
-  let cache = [], n = 0;
-  let banks = input.split(/\s+/).map(n => parseInt(n, 10));
+  let cache = [],
+    n = 0;
+  let banks = input.split(/\s+/).map((n) => parseInt(n, 10));
 
-  while (!_.includes(cache, banks.join(','))) {
-    cache.push(banks.join(','));
+  while (!_.includes(cache, banks.join(","))) {
+    cache.push(banks.join(","));
 
     // Perform reallocation
     let b = Math.max.apply(null, banks);

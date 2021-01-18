@@ -1,5 +1,5 @@
-const md5 = require('md5');
-const _ = require('lodash');
+const md5 = require("md5");
+const _ = require("lodash");
 
 module.exports = (input) => {
   let validHashes = [];
@@ -9,7 +9,7 @@ module.exports = (input) => {
     let hash = md5(input + i);
     let triplet = hash.match(/(.)\1{2}/);
 
-    _.remove(todoHashes, todo => {
+    _.remove(todoHashes, (todo) => {
       if (todo.i + 1000 < i) {
         return true;
       }
@@ -23,7 +23,7 @@ module.exports = (input) => {
     });
 
     if (triplet) {
-      todoHashes.push({i: i, c: triplet[1]});
+      todoHashes.push({ i: i, c: triplet[1] });
     }
   }
 

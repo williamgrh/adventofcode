@@ -49,9 +49,9 @@ class Screen {
 
   print() {
     for (let y = 0; y < this.height; y++) {
-      let line = '';
+      let line = "";
       for (let x = 0; x < this.width; x++) {
-        line += this.pixels[`${x},${y}`] === 1 ? '# ' : '- ';
+        line += this.pixels[`${x},${y}`] === 1 ? "# " : "- ";
       }
       console.log(line);
     }
@@ -62,19 +62,28 @@ module.exports = (input) => {
   let screen = new Screen(6, 50);
   for (let i in input) {
     let a, b;
-    if (input[i].startsWith('rect')) {
-      [a, b] = input[i].slice(5).split('x').map(n => parseInt(n, 10));
+    if (input[i].startsWith("rect")) {
+      [a, b] = input[i]
+        .slice(5)
+        .split("x")
+        .map((n) => parseInt(n, 10));
       screen.rect(a, b);
-    } else if (input[i].startsWith('rotate row')) {
-      [a, b] = input[i].slice(13).split(' by ').map(n => parseInt(n, 10));
+    } else if (input[i].startsWith("rotate row")) {
+      [a, b] = input[i]
+        .slice(13)
+        .split(" by ")
+        .map((n) => parseInt(n, 10));
       screen.rotateRow(a, b);
-    } else if (input[i].startsWith('rotate column')) {
-      [a, b] = input[i].slice(16).split(' by ').map(n => parseInt(n, 10));
+    } else if (input[i].startsWith("rotate column")) {
+      [a, b] = input[i]
+        .slice(16)
+        .split(" by ")
+        .map((n) => parseInt(n, 10));
       screen.rotateCol(a, b);
     }
   }
 
   // screen.print();
 
-  return 'CFLELOYFCS';
+  return "CFLELOYFCS";
 };

@@ -1,5 +1,5 @@
 module.exports = (input) => {
-  input = input.map(s => s.trim().split(/\[|\]/));
+  input = input.map((s) => s.trim().split(/\[|\]/));
   var count = 0;
   for (let i = 0; i < input.length; i++) {
     let aba = [];
@@ -8,16 +8,16 @@ module.exports = (input) => {
       let s = input[i][j];
       let match = [];
       for (let k = 0; k < s.length - 2; k++) {
-        if (s[k] === s[k+2] && s[k] !== s[k+1]) {
+        if (s[k] === s[k + 2] && s[k] !== s[k + 1]) {
           if (j % 2 === 0) {
-            aba.push(s[k] + s[k+1] + s[k+2]);
+            aba.push(s[k] + s[k + 1] + s[k + 2]);
           } else {
-            bab.push(s[k] + s[k+1] + s[k+2]);
+            bab.push(s[k] + s[k + 1] + s[k + 2]);
           }
         }
       }
     }
-    bab.forEach((s, i, a) => a[i] = s[1] + s[0] + s[1]);
+    bab.forEach((s, i, a) => (a[i] = s[1] + s[0] + s[1]));
     for (let j = 0; j < aba.length; j++) {
       if (bab.includes(aba[j])) {
         count++;

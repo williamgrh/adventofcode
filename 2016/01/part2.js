@@ -1,8 +1,8 @@
 module.exports = (input) => {
-	// parse the input data
-  var data = input.split(', ').map((s) => {
+  // parse the input data
+  var data = input.split(", ").map((s) => {
     // convert R and L turns to positive and negative
-    if (s[0] === 'R') {
+    if (s[0] === "R") {
       return [1, parseInt(s.slice(1))];
     } else {
       return [-1, parseInt(s.slice(1))];
@@ -20,17 +20,19 @@ module.exports = (input) => {
     // use alternation to decide direction and coordinate to modify
     var alternate = i % 2 === 0;
     var signMatch = direction === data[i][0];
-    direction = ((alternate && signMatch) || (!alternate && !signMatch)) ? 1 : -1;
+    direction = (alternate && signMatch) || (!alternate && !signMatch) ? 1 : -1;
 
     // add all points along the next path to visited coordinates set
     for (let j = 0; j < Math.abs(data[i][1]); j++) {
       nextCoords[i % 2] += direction;
       // if the size of the set does not change the point has been visited
-      if (coords.size === coords.add(`${nextCoords[0]},${nextCoords[1]}`).size) {
+      if (
+        coords.size === coords.add(`${nextCoords[0]},${nextCoords[1]}`).size
+      ) {
         return Math.abs(nextCoords[0]) + Math.abs(nextCoords[1]);
       }
     }
   }
 
   return Math.abs(nextCoords[0]) + Math.abs(nextCoords[1]);
-}
+};

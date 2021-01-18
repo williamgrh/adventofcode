@@ -1,18 +1,18 @@
 module.exports = (input) => {
   // parse input data
-  var data = input.map(s => s.split(''));
+  var data = input.map((s) => s.split(""));
 
   // model of the keypad
   var keypad = [
-    [null, null,  1,  null, null],
-    [null,    2,  3,     4, null],
-    [   5,    6,  7,     8,    9],
-    [null,  'A', 'B',  'C', null],
-    [null, null, 'D', null, null]
+    [null, null, 1, null, null],
+    [null, 2, 3, 4, null],
+    [5, 6, 7, 8, 9],
+    [null, "A", "B", "C", null],
+    [null, null, "D", null, null],
   ];
 
   // initialize solution string and starting button location
-  var solution = '';
+  var solution = "";
   var i = 2;
   var j = 0;
 
@@ -22,16 +22,16 @@ module.exports = (input) => {
       let ii = i;
       let jj = j;
       switch (data[x][y]) {
-        case 'U':
+        case "U":
           ii--;
           break;
-        case 'D':
+        case "D":
           ii++;
           break;
-        case 'L':
+        case "L":
           jj--;
           break;
-        case 'R':
+        case "R":
           jj++;
           break;
         default:
@@ -53,4 +53,4 @@ module.exports = (input) => {
   }
 
   return solution;
-}
+};

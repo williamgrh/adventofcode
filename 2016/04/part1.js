@@ -1,9 +1,13 @@
 module.exports = (input) => {
   // parse input data
-  var data = input.map(s => {
+  var data = input.map((s) => {
     let a = s.trim().slice(0, -1).split(/[\[]/);
-    let i = a[0].lastIndexOf('-');
-    return [a[0].slice(0, i).replace(/-/g, ''), a[1], parseInt(a[0].slice(i+1))];
+    let i = a[0].lastIndexOf("-");
+    return [
+      a[0].slice(0, i).replace(/-/g, ""),
+      a[1],
+      parseInt(a[0].slice(i + 1)),
+    ];
   });
 
   var sectorSum = 0;
@@ -20,20 +24,24 @@ module.exports = (input) => {
     }
 
     // sort counts, create string to compare with checksum
-    var check = Object.keys(counts).sort((a, b) => {
-      if (counts[a] < counts[b]) {
-        return -1;
-      } else if (counts[a] > counts[b]) {
-        return 1;
-      } else if (counts[a] === counts[b]) {
-        if (a < b) {
-          return 1;
-        } else if (b < a) {
+    var check = Object.keys(counts)
+      .sort((a, b) => {
+        if (counts[a] < counts[b]) {
           return -1;
+        } else if (counts[a] > counts[b]) {
+          return 1;
+        } else if (counts[a] === counts[b]) {
+          if (a < b) {
+            return 1;
+          } else if (b < a) {
+            return -1;
+          }
         }
-      }
-      return 0;
-    }).reverse().slice(0, 5).join('');
+        return 0;
+      })
+      .reverse()
+      .slice(0, 5)
+      .join("");
 
     if (check === room[1]) {
       sectorSum += room[2];

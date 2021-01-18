@@ -15,9 +15,9 @@ module.exports = (input) => {
   let nextbot;
 
   // Give bots their starting chips and parse instructions
-  input.forEach(instruction => {
-    instruction = instruction.split(' ');
-    if (instruction[0] === 'value') {
+  input.forEach((instruction) => {
+    instruction = instruction.split(" ");
+    if (instruction[0] === "value") {
       if (!bots[instruction[5]]) {
         bots[instruction[5]] = [];
       } else {
@@ -27,7 +27,7 @@ module.exports = (input) => {
     } else {
       instructions[instruction[1]] = {
         low: [instruction[5], instruction[6]],
-        high: [instruction[10], instruction[11]]
+        high: [instruction[10], instruction[11]],
       };
     }
   });
@@ -51,14 +51,14 @@ module.exports = (input) => {
     }
 
     // transfer low
-    if (i.low[0] === 'bot') {
+    if (i.low[0] === "bot") {
       bots = transferChip(bots, i.low[1], low);
     } else {
       output = transferChip(output, i.low[1], low);
     }
 
     // transfer high
-    if (i.high[0] === 'bot') {
+    if (i.high[0] === "bot") {
       bots = transferChip(bots, i.high[1], high);
     } else {
       output = transferChip(output, i.high[1], high);

@@ -1,7 +1,9 @@
-const md5 = require('md5');
-const _ = require('lodash');
-const fs = require('fs')
-const cache = fs.existsSync('./2016/14/cache.json') ? require('./cache.json') : []
+const md5 = require("md5");
+const _ = require("lodash");
+const fs = require("fs");
+const cache = fs.existsSync("./2016/14/cache.json")
+  ? require("./cache.json")
+  : [];
 
 module.exports = (input) => {
   let validHashes = _.clone(cache);
@@ -14,14 +16,14 @@ module.exports = (input) => {
     }
     let triplet = hash.match(/(.)\1{2}/);
 
-    _.remove(todoHashes, todo => {
+    _.remove(todoHashes, (todo) => {
       if (todo.i + 1000 < i) {
         return true;
       }
 
       if (hash.includes(Array(6).join(todo.c))) {
         validHashes.push(todo.i);
-        fs.writeFileSync('./2016/14/cache.json', JSON.stringify(validHashes))
+        fs.writeFileSync("./2016/14/cache.json", JSON.stringify(validHashes));
         return true;
       }
 
@@ -29,7 +31,7 @@ module.exports = (input) => {
     });
 
     if (triplet) {
-      todoHashes.push({i: i, c: triplet[1]});
+      todoHashes.push({ i: i, c: triplet[1] });
     }
   }
 

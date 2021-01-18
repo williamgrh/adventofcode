@@ -17,10 +17,10 @@
     "node": ">=7.0.0"
   },
   "dependencies": {
-    "js-combinatorics": "0.5.2",
-    "lodash": "4.17.2",
-    "md5": "^2.2.1",
-    "mocha": "3.2.0",
-    "moment": "2.17.0"
+    "js-combinatorics": "1.4.5",
+    "lodash": "^4.17.20",
+    "md5": "^2.3.0",
+    "mocha": "^8.2.1",
+    "moment": "^2.29.1"
   }
 }

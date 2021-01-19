@@ -5,7 +5,7 @@ module.exports = (input) => {
     const letter = i.match(/([a-z]):/)[1];
     const password = i.match(/: ([a-z]+)$/)[1];
 
-    if (password[pos1] === letter ^ password[pos2] === letter) {
+    if ((password[pos1] === letter) ^ (password[pos2] === letter)) {
       return acc + 1;
     }
 

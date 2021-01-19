@@ -5,7 +5,7 @@ module.exports = (input) => {
     const letter = i.match(/([a-z]):/)[1];
     const password = i.match(/: ([a-z]+)$/)[1];
 
-    const count = (password.match(new RegExp(letter, 'g')) || []).length;
+    const count = (password.match(new RegExp(letter, "g")) || []).length;
 
     if (count >= min && count <= max) {
       return acc + 1;

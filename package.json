@@ -1,29 +1,25 @@
 {
   "name": "adventofcode",
-  "description": "Solving adventofcode.com puzzles using NodeJS v7.2 and ES6.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/NiXXeD/adventofcode"
-  },
   "version": "1.0.0",
-  "author": "Andy Christianson",
-  "license": "ISC",
   "scripts": {
     "setup": "node setup.js",
     "start": "node index.js",
-    "test": "mocha test.js --timeout 30000"
+    "test": "mocha test.js --timeout 30000",
+    "prepare": "husky install"
   },
-  "engines": {
-    "node": ">=7.0.0"
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
-    "js-combinatorics": "1.4.5",
+    "js-combinatorics": "^2.1.1",
     "lodash": "^4.17.20",
     "md5": "^2.3.0",
     "moment": "^2.29.1"
   },
   "devDependencies": {
-    "mocha": "^8.2.1",
-    "prettier": "2.2.1"
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "mocha": "^10.1.0",
+    "prettier": "2.8.0"
   }
 }

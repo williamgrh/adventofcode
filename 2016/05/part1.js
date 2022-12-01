@@ -1,13 +1,17 @@
-const md5 = require("md5");
+const fs = require("fs");
+const path = require("path");
+
 module.exports = (input) => {
   var password = "";
-  var index = 0;
+  const hashes = fs
+    .readFileSync(path.resolve(__dirname, `zero-hashes-${input}.txt`), "utf-8")
+    .split("\n");
+
   while (password.length < 8) {
-    let hash = md5(`${input}${index}`);
-    if (hash.startsWith("00000")) {
+    hashes.forEach((line) => {
+      const [index, hash] = line.split(" ");
       password = password.concat(hash[5]);
-    }
-    index++;
+    });
   }
   return password;
 };

@@ -7,11 +7,11 @@ module.exports = (input) => {
     .readFileSync(path.resolve(__dirname, `zero-hashes-${input}.txt`), "utf-8")
     .split("\n");
 
-  while (password.length < 8) {
-    hashes.forEach((line) => {
-      const [index, hash] = line.split(" ");
-      password = password.concat(hash[5]);
-    });
+  for (let i = 0; i < hashes.length; i++) {
+    const [_, hash] = hashes[i].split(" ");
+    password = password.concat(hash[5]);
+    if (password.length === 8) {
+      return password;
+    }
   }
-  return password;
 };

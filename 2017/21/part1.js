@@ -40,13 +40,11 @@ module.exports = (input) => {
   for (let iter = 0; iter < 5; iter++) {
     let img = image[0].split("/"),
       l = img.length;
-    console.log(l);
     if (l % 2 === 0) {
       let rows = [];
       for (let r = 0; r < l; r++)
         rows.push([img[r].slice(0, l / 2), img[r].slice(l / 2)]);
       img = ["", "", "", ""];
-      console.log(rows);
       return;
 
       // slice each row

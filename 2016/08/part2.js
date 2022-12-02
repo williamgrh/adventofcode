@@ -53,7 +53,6 @@ class Screen {
       for (let x = 0; x < this.width; x++) {
         line += this.pixels[`${x},${y}`] === 1 ? "# " : "- ";
       }
-      console.log(line);
     }
   }
 }

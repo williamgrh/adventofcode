@@ -61,16 +61,13 @@ module.exports = (test) => {
     it("day 20, part 1", () => test(17, 20, 1, 170));
     it("day 20, part 2", () => test(17, 20, 2, 571));
 
-    it("day 21, part 1", () => test(17, 21, 1, 0));
-    it("day 21, part 2", () => test(17, 21, 2, 0));
+    it("day 21, part 1", () => test(17, 21, 1, 1));
+    it("day 21, part 2", () => test(17, 21, 2, 1));
 
     it("day 22, part 1", () => test(17, 22, 1, 5223));
     it("day 22, part 2", () => test(17, 22, 2, 2511456));
 
     it("day 23, part 1", () => test(17, 23, 1, 8281));
     it("day 23, part 2", () => test(17, 23, 2, 911));
-
-    it("day 24, part 1", () => test(17, 24, 1, 0));
-    it("day 24, part 2", () => test(17, 24, 2, 0));
   });
 };

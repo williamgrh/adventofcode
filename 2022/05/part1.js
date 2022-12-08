@@ -2,7 +2,7 @@ module.exports = (input) => {
   // find boundaries of input
   const rows = input.findIndex((line) => line.indexOf(" 1 ") === 0);
   const columns = Number(
-    input[rows].substr(input[rows].length - 2, input[rows].length - 1)
+    input[rows].substring(input[rows].length - 2, input[rows].length - 1)
   );
 
   // rotate input

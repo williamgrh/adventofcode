@@ -1,7 +1,10 @@
 module.exports = (input) => {
   return input.reduce((total, rucksack) => {
-    const compartment1 = rucksack.substr(0, rucksack.length / 2).split("");
-    const compartment2 = rucksack.substr(rucksack.length / 2, rucksack.length);
+    const compartment1 = rucksack.substring(0, rucksack.length / 2).split("");
+    const compartment2 = rucksack.substring(
+      rucksack.length / 2,
+      rucksack.length
+    );
 
     for (let i = 0; i < compartment1.length; i++) {
       const item = compartment1[i];
